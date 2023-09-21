@@ -24,11 +24,11 @@ export default function MaterialDetails() {
         <tbody>
           <tr>
             <th scope="row">Type</th>
-            <td>{material.materialType.name}</td>
+            <td>{material.materialType?.name}</td>
           </tr>
           <tr>
             <th scope="row">Genre</th>
-            <td>{material.genre.name}</td>
+            <td>{material.genre?.name}</td>
           </tr>
           <tr>
             <th scope="row">Out Of Circulation?</th>

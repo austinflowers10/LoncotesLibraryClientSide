@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Table } from "reactstrap";
-import { getMaterials } from "../../data/materialsData";
 import { Link } from "react-router-dom";
+import { getMaterials } from "../../data/materialsData";
 
 export default function MaterialList() {
   const [materials, setMaterials] = useState([]);
