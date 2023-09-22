@@ -3,7 +3,7 @@ import { Table } from "reactstrap";
 import { Link } from "react-router-dom";
 import { getMaterials } from "../../data/materialsData";
 
-export default function MaterialList() {
+export default function MaterialsList() {
   const [materials, setMaterials] = useState([]);
 
   useEffect(() => {
