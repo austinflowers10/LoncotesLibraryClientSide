@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Table } from "reactstrap";
 import { Link } from "react-router-dom";
-import { getPatrons } from "../../data/patronsData";
+import { getPatrons, postEndPatron } from "../../data/patronsData";
 
-export const PatronList = () => {
+
+export const PatronsList = () => {
     const [patrons, setPatrons] = useState([])
 
     useEffect(() => {
@@ -44,8 +45,14 @@ export const PatronList = () => {
                     <td>
                         {
                             p.isActive 
-                            ? <Link to={`end/${p.id}`}>Deactivate</Link>
-                            : <p>-----</p>
+                            ? <button
+                                onClick={(e) => {
+                                    postEndPatron(p.id)
+                                        .then(getPatrons)
+                                        .then(setPatrons)
+                                }}
+                            >Deactivate</button>
+                            : <p></p>
                         }
                     </td>
                 </tr>
