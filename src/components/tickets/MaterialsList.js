@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Table } from "reactstrap";
 import { Link } from "react-router-dom";
-import { getMaterials } from "../../data/materialsData";
+import { getMaterials, postEndMaterial } from "../../data/materialsData";
 
 export default function MaterialsList() {
   const [materials, setMaterials] = useState([]);
@@ -24,6 +24,7 @@ export default function MaterialsList() {
             <th>Type</th>
             <th>Genre</th>
             <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +37,15 @@ export default function MaterialsList() {
               <td>
                 <Link to={`${m.id}`}>Details</Link>
               </td>
+              <td>
+                <button
+                    onClick={(e) => {
+                        postEndMaterial(m.id)
+                            .then(getMaterials)
+                            .then(setMaterials)
+                    }}
+                >Remove</button>
+               </td>
             </tr>
           ))}
         </tbody>

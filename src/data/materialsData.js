@@ -16,3 +16,7 @@ export const createMaterial = (material) => {
     body: JSON.stringify(material),
   }).then((res) => res.json());
 };
+
+export const postEndMaterial = (id) => {
+    return fetch(_apiUrl + `/end/${id}`, {method: "POST"}).then((res) => res.json());
+}
