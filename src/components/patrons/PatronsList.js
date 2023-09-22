@@ -40,7 +40,7 @@ export const PatronsList = () => {
                     <td>{p.email}</td>
                     <td>{p.isActive ? "Active" : "Inactive"}</td>
                     <td>
-                    <Link to={`${p.id}`}>View/Edit Details</Link>
+                        <Link to={`${p.id}`}>View/Edit Details</Link>
                     </td>
                     <td>
                         {
