@@ -6,8 +6,12 @@ export const getMaterials = () => {
 
 //export a function here that gets a ticket by id
 export const getMaterial = (id) => {
-  return fetch(`${_apiUrl}/${id}`).then((r) => r.json());
+  return fetch(`${_apiUrl}/single/${id}`).then((r) => r.json());
 };
+
+export const getAvailableMaterials = () => {
+    return fetch(_apiUrl + `/available`).then((r) => r.json());
+}
 
 export const createMaterial = (material) => {
   return fetch(_apiUrl, {
