@@ -10,6 +10,9 @@ import CreateMaterial from "./components/tickets/CreateMaterial";
 import { PatronsList } from "./components/patrons/PatronsList";
 import { PatronDetails } from "./components/patrons/PatronDetails";
 import { CheckoutsList } from "./components/checkouts/CheckoutsList";
+import BrowseMaterials from "./components/tickets/BrowseMaterials";
+import { MaterialCheckout } from "./components/tickets/MaterialCheckout";
+import { OverdueCheckouts } from "./components/checkouts/OverdueCheckouts";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -21,6 +24,10 @@ root.render(
           <Route index element={<MaterialsList />} />
           <Route path=":id" element={<MaterialDetails />} />
           <Route path="create" element={<CreateMaterial />} />
+          <Route path=":id/checkout" element={<MaterialCheckout/>} />
+        </Route>
+        <Route path="browse">
+          <Route index element={<BrowseMaterials />} />
         </Route>
         <Route path="patrons">
           <Route index element={<PatronsList />} />
@@ -28,7 +35,7 @@ root.render(
         </Route>
         <Route path="checkouts">
           <Route index element={<CheckoutsList />} />
-          <Route path=":id" element={<></>} />
+          <Route path="overdue" element={<OverdueCheckouts/>} />
         </Route>
       </Route>
     </Routes>
