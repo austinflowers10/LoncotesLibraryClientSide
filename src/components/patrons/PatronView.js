@@ -54,7 +54,7 @@ export const PatronView = ( {selectedPatronProp, setEditProp} ) => {
           {selectedPatronProp.checkouts.map((co) => (
             <tr key={`checkout-${co.id}`}>
               <td>
-                {co.patron.firstName} {co.patron.lastName}
+                {co.patron.fullName}
               </td>
               <td>{co.checkoutDate?.split("T")[0]}</td>
               <td>{co.returnDate?.split("T")[0] || "Checked Out"}</td>
